@@ -85,7 +85,8 @@ void draw() {
       +" | [F4] HOLD: "+hold
       +" | [F5-F6] TRIG LPF "
       //+"| [F7-F8] PRESCALER: "+nf((pow(2, prescaler)), 1, 0)
-      +" | [<--->] OFFSET", 25, 25);
+      +" | [<--->] OFFSET"
+      +" | mod by PMKrol", 25, 25);
     text(
       //"FPS: "+nf(frequency, 2, 2)
       //+" | 
