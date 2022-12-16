@@ -109,7 +109,7 @@ ResultActive=yes
 #sudo nano /etc/hosts
 
 cd Pobrane
-wget https://github.com/PMKrol/WTDElektro/archive/refs/heads/main.zip
+wget https://github.com/PMKrol/WTDElektro/archive/refs/heads/main.zip -O main.zip
 7z x main.zip
 cd WTDElektro-main/
 
