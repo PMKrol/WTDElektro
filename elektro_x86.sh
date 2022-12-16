@@ -33,7 +33,7 @@ sudo cp disable-network-control.pkla /etc/polkit-1/localauthority/50-local.d/dis
 
 #Disable screen-lock
 #TODO
-kwriteconfig5 --file kscreensaverrc --group Daemon --key Autolock false
+#kwriteconfig5 --file kscreensaverrc --group Daemon --key Autolock false
 
 #Disable sleep
 #TODO
@@ -108,12 +108,14 @@ ResultActive=yes
 #sudo nano /etc/hostname
 #sudo nano /etc/hosts
 
-cd Pobrane
+cd $HOME/Pobrane
 wget https://github.com/PMKrol/WTDElektro/archive/refs/heads/main.zip -O main.zip
 7z x main.zip
 cd WTDElektro-main/processing/ameduino/application.linux32
-sudo cp -r * /usr/local/bin
-sudo chmod +x /usr/local/bin/ameduino
+sudo mkdir /usr/local/bin/ameduino32
+sudo cp -r * /usr/local/bin/ameduino32
+sudo chmod +x /usr/local/bin/ameduino32/ameduino
+sudo chown student /usr/local/bin/ameduino32 -R
 
 #Create icon
 echo "installing ameduino desktop icon"
