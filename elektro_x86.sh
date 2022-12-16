@@ -110,7 +110,7 @@ ResultActive=yes
 
 cd $HOME/Pobrane
 wget https://github.com/PMKrol/WTDElektro/archive/refs/heads/main.zip -O main.zip
-7z x main.zip
+7z x main.zip -aoa
 cd WTDElektro-main/processing/ameduino/application.linux32
 sudo mkdir /usr/local/bin/ameduino32
 sudo cp -r * /usr/local/bin/ameduino32
