@@ -111,7 +111,34 @@ ResultActive=yes
 cd Pobrane
 wget https://github.com/PMKrol/WTDElektro/archive/refs/heads/main.zip -O main.zip
 7z x main.zip
-cd WTDElektro-main/
+cd WTDElektro-main/processing/ameduino/application.linux32
+sudo cp -r * /usr/local/bin
+sudo chmod +x /usr/local/bin/ameduino
+
+#Create icon
+echo "installing ameduino desktop icon"
+
+icon=$HOME/Pulpit/ameduino.desktop
+
+if [ -e $icon ]; then
+	{
+	echo "removing old icon ..."
+	rm $icon
+	}
+fi
+
+echo [Desktop Entry] >> $icon
+echo Version=1.0 >> $icon
+echo Type=Application >> $icon
+echo Name=ameduino >> $icon
+echo Comment= >> $icon
+echo Exec=/usr/local/bin/ameduino >> $icon
+echo Icon= >> $icon
+echo Path= >> $icon
+echo Terminal=false >> $icon
+echo StartupNotify=false >> $icon
+
+#End of create icon
 
 
 ### useradd and mod ###
