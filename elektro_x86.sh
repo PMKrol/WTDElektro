@@ -108,13 +108,16 @@ ResultActive=yes
 #sudo nano /etc/hostname
 #sudo nano /etc/hosts
 
+$AVERSION=ameduino_pmkrol1
+
 cd $HOME/Pobrane
 wget https://github.com/PMKrol/WTDElektro/archive/refs/heads/main.zip -O main.zip
 7z x main.zip -aoa
-cd WTDElektro-main/processing/ameduino/application.linux32
+cd WTDElektro-main/processing/$AVERSION/application.linux32
+sudo rm -r /usr/local/bin/ameduino32
 sudo mkdir /usr/local/bin/ameduino32
 sudo cp -r * /usr/local/bin/ameduino32
-sudo chmod +x /usr/local/bin/ameduino32/ameduino
+sudo chmod +x /usr/local/bin/ameduino32/$AVERSION
 sudo chown student /usr/local/bin/ameduino32 -R
 
 #Create icon
@@ -134,7 +137,7 @@ echo Version=1.0 >> $icon
 echo Type=Application >> $icon
 echo Name=ameduino >> $icon
 echo Comment= >> $icon
-echo Exec=/usr/local/bin/ameduino32/ameduino >> $icon
+echo Exec=/usr/local/bin/ameduino32/$AVERSION >> $icon
 echo Icon= >> $icon
 echo Path= >> $icon
 echo Terminal=false >> $icon
