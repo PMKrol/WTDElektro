@@ -1,6 +1,6 @@
 #! /bin/bash
 
 cd Pobrane
-wget https://raw.githubusercontent.com/PMKrol/WTDElektro/main/elektro_x86.sh
+wget https://raw.githubusercontent.com/PMKrol/WTDElektro/main/elektro_x86.sh -O elektro_x86.sh
 chmod +x elektro_x86.sh
 ./elektro_x86.sh
