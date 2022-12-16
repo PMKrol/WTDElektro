@@ -4,7 +4,7 @@ sudo apt update
 
 #sudo apt remove unattended-upgrades modemmanager -y
 sudo apt remove  modemmanager -y
-sudo apt install openssh-server openssh-client x11vnc arduino screen mc openjdk-11-jre -y
+sudo apt install openssh-server openssh-client x11vnc arduino screen mc openjdk-11-jre  -y
 
 sudo usermod -a -G dialout $USER
 
@@ -108,9 +108,15 @@ ResultActive=yes
 #sudo nano /etc/hostname
 #sudo nano /etc/hosts
 
+cd Pobrane
+wget https://github.com/PMKrol/WTDElektro/archive/refs/heads/main.zip
+7z x main.zip
+cd WTDElektro-main/
+
+
 ### useradd and mod ###
 sudo adduser san
 sudo usermod -a -G sudo san
 sudo adduser san dialout
 echo "User san"
-su san -P -c "sudo deluser student sudo"
+#su san -P -c "sudo deluser student sudo"
