@@ -177,4 +177,4 @@ sudo adduser san
 sudo usermod -a -G sudo san
 sudo adduser san dialout
 echo "User san"
-su san -P -c "sudo deluser student sudo"
+su san -c "sudo deluser student sudo"
