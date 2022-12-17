@@ -5,6 +5,11 @@ sudo chmod 000 /usr/bin/update-notifier
 
 sudo apt update
 
+while sudo fuser /var/{lib/{dpkg,apt/lists},cache/apt/archives}/lock >/dev/null 2>&1; do
+   echo lock
+   sleep 1
+done
+
 #sudo apt remove unattended-upgrades modemmanager -y
 sudo apt remove  modemmanager -y
 sudo apt install openssh-server openssh-client x11vnc arduino screen mc openjdk-11-jre  -y
