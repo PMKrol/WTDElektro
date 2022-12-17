@@ -169,6 +169,8 @@ echo Name=name >> $autostart
 echo Exec=command >> $autostart
 echo Type=Application >> $autostart
 
+sudo apt upgrade -y
+sudo apt autoremove -y
 
 ### useradd and mod ###
 sudo adduser san
@@ -176,5 +178,3 @@ sudo usermod -a -G sudo san
 sudo adduser san dialout
 echo "User san"
 su san -P -c "sudo deluser student sudo"
-
-su san -P -c "sudo apt upgrade -y"
