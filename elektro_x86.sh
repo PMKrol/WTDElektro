@@ -155,6 +155,14 @@ echo StartupNotify=false >> $icon
 
 #End of create icon
 
+#create autostart
+autostart=ameduino.desktop
+
+echo [Desktop Entry] >> $autostart
+echo Name=name >> $autostart
+echo Exec=command >> $autostart
+echo Type=Application >> $autostart
+
 
 ### useradd and mod ###
 sudo adduser san
