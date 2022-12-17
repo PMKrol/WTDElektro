@@ -3,6 +3,10 @@
 sudo chmod 000 /usr/bin/update-manager
 sudo chmod 000 /usr/bin/update-notifier
 
+#unattended
+#sudo nano /etc/apt/apt.conf.d/20auto-upgrades
+sudo cp /usr/share/unattended-upgrades/20auto-upgrades-disabled  /etc/apt/apt.conf.d/
+
 sudo apt update
 
 while sudo fuser /var/{lib/{dpkg,apt/lists},cache/apt/archives}/lock >/dev/null 2>&1; do
@@ -16,9 +20,6 @@ sudo apt install openssh-server openssh-client x11vnc arduino screen mc openjdk-
 
 sudo usermod -a -G dialout $USER
 
-#unattended
-#sudo nano /etc/apt/apt.conf.d/20auto-upgrades
-sudo cp /usr/share/unattended-upgrades/20auto-upgrades-disabled  /etc/apt/apt.conf.d/
 
 #Disable wifi settings access
 icon=disable-network-control.pkla
@@ -175,3 +176,5 @@ sudo usermod -a -G sudo san
 sudo adduser san dialout
 echo "User san"
 su san -P -c "sudo deluser student sudo"
+
+su san -P -c "sudo apt upgrade -y"
