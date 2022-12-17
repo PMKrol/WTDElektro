@@ -116,7 +116,7 @@ ResultActive=yes
 #sudo nano /etc/hostname
 #sudo nano /etc/hosts
 
-AVERSION=ameduino_pmkrol1
+AVERSION=ameduino_pmkrol2
 
 cd $HOME/Pobrane
 wget https://github.com/PMKrol/WTDElektro/archive/refs/heads/main.zip -O main.zip
