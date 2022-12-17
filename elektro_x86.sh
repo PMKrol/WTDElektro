@@ -122,7 +122,7 @@ ResultActive=yes
 AVERSION=ameduino_pmkrol2
 
 cd $HOME/Pobrane
-wget https://github.com/PMKrol/WTDElektro/archive/refs/heads/main.zip -O main.zip
+#wget https://github.com/PMKrol/WTDElektro/archive/refs/heads/main.zip -O main.zip
 7z x main.zip -aoa
 cd WTDElektro-main/processing/$AVERSION/application.linux32
 sudo rm -r /usr/local/bin/ameduino32
@@ -166,6 +166,7 @@ echo StartupNotify=false >> $icon
 
 #create autostart
 autostart=$HOME/.config/autostart/ameduino.desktop
+mkdir $HOME/.config/autostart
 rm $autostart
 
 echo [Desktop Entry] >> $autostart
