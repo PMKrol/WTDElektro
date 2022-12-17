@@ -1,5 +1,7 @@
 #! /bin/bash
 
+echo "maybe \n sudo usermod -a -G $USER sudo\n would be good idea?"
+
 sudo chmod 000 /usr/bin/update-manager
 sudo chmod 000 /usr/bin/update-notifier
 
