@@ -86,7 +86,7 @@ void draw() {
       +" | [5-6] TRIG LPF "
       //+"| [F7-F8] PRESCALER: "+nf((pow(2, prescaler)), 1, 0)
       +" | [<--->] OFFSET"
-      +" \t\t mod by PMKrol", 25, 25);
+      +"         mod by PMKrol", 25, 25);
     text(
       //"FPS: "+nf(frequency, 2, 2)
       //+" | 
@@ -167,26 +167,26 @@ int getValueFromBuffer(int index) {
 
 // Handle keys
 void keyPressed() {  
-  if (key == CODED) {
+  //if (key == CODED) {
     if (connected) {
-      if (keyCode == '1') {
+      if (key == '1') {
         samplesPerLine*=1.1;
         if (samplesPerLine*windowWidth>bufferSize) samplesPerLine=bufferSize/windowWidth;
       }
-      if (keyCode == '2') {
+      if (key == '2') {
         samplesPerLine/=1.1;
         if (samplesPerLine<1/(float)windowWidth) samplesPerLine=1/(float)windowWidth;
       }
-      if (keyCode == '3') {
+      if (key == '3') {
         sync=!sync;
       }
-      if (keyCode == '4') {
+      if (key == '4') {
         hold=!hold;
       }
-      if (keyCode == '5') {
+      if (key == '5') {
         if (trigLevelLPF<.01) trigLevelLPF*=10;
       }
-      if (keyCode == '6') {
+      if (key == '6') {
         if (trigLevelLPF>.000001) trigLevelLPF/=10;
       }
       //if (keyCode == KeyEvent.VK_F7) {
@@ -210,5 +210,5 @@ void keyPressed() {
       serial.write((byte)prescaler);
       connected=true;
     }
-  }
+  //}
 }
