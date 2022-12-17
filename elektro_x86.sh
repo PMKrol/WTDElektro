@@ -1,5 +1,8 @@
 #! /bin/bash
 
+sudo chmod 000 /usr/bin/update-manager
+sudo chmod 000 /usr/bin/update-notifier
+
 sudo apt update
 
 #sudo apt remove unattended-upgrades modemmanager -y
@@ -120,6 +123,13 @@ sudo cp -r * /usr/local/bin/ameduino32
 sudo chmod +x /usr/local/bin/ameduino32/$AVERSION
 sudo chown student /usr/local/bin/ameduino32 -R
 
+symlink=/usr/local/bin/ameduino
+echo "#!/bin/bash
+export PATH=\$PATH:`ls /usr/java/jre*/bin/java | sed -e 's/java\$//'` #ok!
+/usr/local/bin/ameduino32/ameduino_pmkrol1" | sudo tee /usr/local/bin/ameduino
+
+sudo chmod +x /usr/local/bin/ameduino
+
 #Create icon
 echo "installing ameduino desktop icon"
 
@@ -137,7 +147,7 @@ echo Version=1.0 >> $icon
 echo Type=Application >> $icon
 echo Name=ameduino >> $icon
 echo Comment= >> $icon
-echo Exec=/usr/local/bin/ameduino32/$AVERSION >> $icon
+echo Exec=/usr/local/bin/ameduino >> $icon
 echo Icon= >> $icon
 echo Path= >> $icon
 echo Terminal=false >> $icon
