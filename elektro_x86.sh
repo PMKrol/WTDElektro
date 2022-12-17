@@ -131,7 +131,7 @@ sudo chown student /usr/local/bin/ameduino32 -R
 
 symlink=/usr/local/bin/ameduino
 echo "#!/bin/bash
-export PATH=\$PATH:`ls /usr/java/jre*/bin/java | sed -e 's/java\$//'` #ok!
+#export PATH=\$PATH:`ls /usr/java/jre*/bin/java | sed -e 's/java\$//'` #ok!
 /usr/local/bin/ameduino32/$AVERSION" | sudo tee /usr/local/bin/ameduino
 
 sudo chmod +x /usr/local/bin/ameduino
