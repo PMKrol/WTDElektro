@@ -130,11 +130,12 @@ sudo chmod +x /usr/local/bin/ameduino32/$AVERSION
 sudo chown student /usr/local/bin/ameduino32 -R
 
 symlink=/usr/local/bin/ameduino
+sudo rm $symlink
 echo "#!/bin/bash
 #export PATH=\$PATH:`ls /usr/java/jre*/bin/java | sed -e 's/java\$//'` #ok!
-/usr/local/bin/ameduino32/$AVERSION" | sudo tee /usr/local/bin/ameduino
+/usr/local/bin/ameduino32/$AVERSION" | sudo tee $symlink
 
-sudo chmod +x /usr/local/bin/ameduino
+sudo chmod +x $symlink
 
 #Create icon
 echo "installing ameduino desktop icon"
@@ -153,7 +154,7 @@ echo Version=1.0 >> $icon
 echo Type=Application >> $icon
 echo Name=ameduino >> $icon
 echo Comment= >> $icon
-echo Exec=/usr/local/bin/ameduino >> $icon
+echo Exec=$symlink >> $icon
 echo Icon= >> $icon
 echo Path= >> $icon
 echo Terminal=false >> $icon
@@ -165,8 +166,8 @@ echo StartupNotify=false >> $icon
 autostart=ameduino.desktop
 
 echo [Desktop Entry] >> $autostart
-echo Name=name >> $autostart
-echo Exec=command >> $autostart
+echo Name=ameduino >> $autostart
+echo Exec=$symlink >> $autostart
 echo Type=Application >> $autostart
 
 sudo apt upgrade -y
