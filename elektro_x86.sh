@@ -165,7 +165,8 @@ echo StartupNotify=false >> $icon
 #End of create icon
 
 #create autostart
-autostart=ameduino.desktop
+autostart=$HOME/.config/autostart/ameduino.desktop
+rm $autostart
 
 echo [Desktop Entry] >> $autostart
 echo Name=ameduino >> $autostart
