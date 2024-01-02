@@ -6,9 +6,9 @@ echo "Run as admin!"
 
 AVERSION=ameduino_pmkrol2
 
-cd /home/student/Pobrane
+#cd /home/student/Pobrane
 #wget https://github.com/PMKrol/WTDElektro/archive/refs/heads/main.zip -O main.zip
-7z x main.zip -aoa
+#7z x main.zip -aoa
 cd WTDElektro-main/processing/$AVERSION/application.linux64
 # sudo rm -r /usr/local/bin/ameduino32
 # sudo mkdir /usr/local/bin/ameduino32
